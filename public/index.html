@@ -1,65 +1,89 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.10.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.10.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.10.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.10.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.10.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+<html lang="es">
+<head></head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="estilos.css">
+  <title>Recomendaciones</title>
+</head>
+<body id="main">
+    <header id="cabeceralogo"> 
+        <div> 
+          <h1 class="estilotitulo">Recomendaciones de peliculas</h1>
+        </div> 
+      </header> 
+      <main> 
+        <div> 
+          <section id="articulosprincipales"> 
+              <h1>
+                 Seleccione el tipo de pelicula que te gusta 
+              </h1>
+              <form action ="javascript:recomendacion();">
+                  <br><center><select id="peli">
+                    <option value="">--Haga una elección--</option>
+                    <option value="romance">Romance</option>
+                    <option value="terror">Terror</option>
+                    <option value="accion">Acción</option>
+                    <option value="musical">Músical</option>
+                    <option value="comedia">Comedia</option>
+                 </select></center></br>
+                <br><center><select id="edad">
+                 <option value="">--Elije tu rango de edad--</option>
+                 <option value="15-18">15-18</option>
+                 <option value="19-25">19-25</option>
+                 <option value="26-30">26-30</option>
+                 </select></center></br>
+                 <center><button type="submit">Recomendación</button></center>
+                 <br><center><img  src="http://2.bp.blogspot.com/-d0mIgC2bOXQ/VGntsBqZa9I/AAAAAAAAAIY/dxpSR3oPOG0/s1600/PicMonkey%2BCollage.png" width="300" height="300"></center></br>
+              </form>
+              <script>
+                function recomendacion() {
+                  if (peli.value=== "romance"&&edad.value=="15-18") {
+                    alert("Usted puede ver: Yo antes de ti o A todos los chicos de los que me enamore");
+                  } else if(peli.value=== "romance"&&edad.value=="19-25") {
+                   alert("Usted puede ver: Cuestión de tiempo o Posdata: te quiero");
+                  } else if(peli.value=== "romance"&&edad.value=="26-30") {
+                   alert("Usted puede ver: Mujer bonita o 10 cosas que odio de ti");
+                  }else if (eleccion === "terror"&&edad.value=="15-18") { 
+                   alert("Usted puede ver: Annabelle vuelve a casa o Dejame entrar");
+                  }else if (eleccion === "terror"&&edad.value=="19-25") { 
+                   alert("Usted puede ver: Insidious a casa o Los otros");
+                  } else if (eleccion === "terror"&&edad.value=="26-30") { 
+                   alert("Usted puede ver: Seis mujeres para el asesino  a casa o Saw");
+                  }else if (eleccion === "accion"&& edad.value=="15-18") {
+                   alert("Usted puede ver: Fast & Furious: Hobbs & Shaw o El retorno del Jedi");
+                  }else if (eleccion === "accion"&& edad.value=="19-25") {
+                   alert("Usted puede ver: La guerra de las galaxias o Misión imposible: Fallout");
+                  }else if (eleccion === "accion"&& edad.value=="26-30") {
+                   alert("Usted puede ver: Capitán América: El soldado de invierno o El último mohicano");
+                  }else if (eleccion === "comedia"&&edad.value=="15-18") { 
+                   alert("Usted puede ver: Deadpool o superlópez");
+                  }else if (eleccion === "comedia"&&edad.value=="19-25") { 
+                   alert("Usted puede ver: Super cool o El club de las madres rebeldes");
+                  }else if (eleccion === "comedia"&&edad.value=="26-30") { 
+                   alert("Usted puede ver: American Pie o Mi pobre angelito");
+                  }else{
+                   alert("No existe esa opción. Intente una vez más"); 
+                  }
+                }
+               </script>
+          </section>
+          <section>
+          <aside id="infoadicional"> 
+            <h1 class="fondo">Estreno en cines</h1> 
+            <img  src="https://static.cinepolis.com/resources/mx/movies/posters/414x603/33761-570675-20191206112840.jpg" width="280" height="500"> 
+          </aside>
+      </main> 
+      <footer id="pielogo"> 
+        <div>
+          <section class="seccionpie"> 
+            <img class="imagen" src="https://2.bp.blogspot.com/-9KkTRyBQWYM/XDyr6vW_inI/AAAAAAAAIYs/bEAsfnJFTBQd96QCu6ijQZjTgierXEVIwCLcBGAs/s1600/resumen_peliculas_2018.jpg"
+            width="500" height="250"> 
+          </section> 
+          <section class="seccionpie"> 
+            <address>Chimalhucan, Estado de México</address> 
+            <small>Fatima Daniela Luna Rodríguez 2020</small>
+          </section> 
+        </div> 
+      </footer> 
+</body>
 </html>
